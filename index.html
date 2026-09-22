@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Victory Ogundipe — Fullstack Engineer, Backend Depth</title>
+<meta name="description" content="Fullstack engineer with backend depth in TypeScript, NestJS and MongoDB. I build multi-tenant APIs and the interfaces on top of them, mostly for education and back-office systems." />
+
+<!-- Social preview (update the URLs after you deploy) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Victory Ogundipe — Fullstack Engineer, Backend Depth" />
+<meta property="og:description" content="TypeScript, NestJS and MongoDB. Multi-tenant APIs and the interfaces on top of them." />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%91%8B</text></svg>" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top" data-content="name">Victory Ogundipe</a>
+
+    <nav class="nav__links" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#decisions">How I work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__cta" id="navEmail" href="#contact">Email</a>
+      <button class="theme-toggle" id="themeToggle" type="button"
+              aria-label="Switch colour theme" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav__progress" id="navProgress" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+  <!-- ── Hero ─────────────────────────────────────────────
+       Positioning rule: lean + stack + domain, understood fast.
+       ─────────────────────────────────────────────────── -->
+  <section class="hero wrap" id="top">
+    <div class="hero__text">
+      <p class="pill" id="availability">
+        <span class="pill__dot" aria-hidden="true"></span>
+        <span id="availabilityText">Open to junior fullstack and backend roles</span>
+      </p>
+
+      <h1 class="hero__title">
+        <span id="heroName">Victory Ogundipe</span>
+      </h1>
+
+      <p class="hero__positioning" id="heroPositioning">
+        Fullstack Engineer, backend depth — TypeScript, NestJS, MongoDB
+      </p>
+
+      <p class="hero__tagline" id="heroTagline">
+        I build the API and the interface, from database schema to shipped screen.
+      </p>
+
+      <p class="hero__focus" id="heroFocus"></p>
+
+      <div class="hero__actions" id="heroLinks"></div>
+    </div>
+
+    <div class="hero__media">
+      <div class="avatar" id="avatar" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <noscript>
+    <div class="wrap noscript">
+      <h2>Victory Ogundipe — Fullstack Engineer</h2>
+      <p>TypeScript, NestJS and MongoDB. Multi-tenant APIs and the interfaces on top of them, mostly for education and back-office systems.</p>
+      <p>Email: <a href="mailto:victoryogundipe4110@gmail.com">victoryogundipe4110@gmail.com</a></p>
+      <p>This page uses JavaScript to render project details. Everything essential is above.</p>
+    </div>
+  </noscript>
+
+  <!-- ── Selected work: one flagship, then supporting ───── -->
+  <section class="section wrap" id="work">
+    <div class="section__head">
+      <h2 class="section__title">Selected work</h2>
+      <p class="section__sub">
+        One flagship project, then supporting work. Each has a case study covering the
+        problem, the decisions, and what I would do differently.
+      </p>
+    </div>
+
+    <article class="featured" id="featured" hidden></article>
+
+    <div class="grid" id="projectGrid"></div>
+  </section>
+
+  <!-- ── How I work: trade-offs, the invisible-work signal ─ -->
+  <section class="section wrap" id="decisions">
+    <div class="section__head">
+      <h2 class="section__title">How I work</h2>
+      <p class="section__sub">
+        Backend decisions do not show up in a screenshot, so here are three trade-offs
+        from real work: what I chose, why, and what it cost. The cost is usually the
+        interesting part.
+      </p>
+    </div>
+
+    <div class="decisions" id="decisionList"></div>
+  </section>
+
+  <!-- ── About + skills ─────────────────────────────────── -->
+  <section class="section wrap" id="about">
+    <div class="section__head">
+      <h2 class="section__title">About</h2>
+      <p class="section__sub" id="aboutLocation"></p>
+    </div>
+
+    <div class="about">
+      <div class="about__prose" id="aboutProse"></div>
+
+      <div class="about__side">
+        <h3 class="mini-title">Skills, by real depth</h3>
+        <div class="tiers" id="tiers"></div>
+
+        <h3 class="mini-title">Background</h3>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ──────────────────────────────────────── -->
+  <section class="section wrap contact" id="contact">
+    <h2 class="contact__heading" id="contactHeading">Let's build something</h2>
+    <p class="contact__blurb" id="contactBlurb"></p>
+
+    <div class="contact__row">
+      <button class="btn btn--primary btn--big" id="copyEmail" type="button">
+        <span id="copyEmailLabel">Copy email address</span>
+      </button>
+      <div class="contact__socials" id="contactSocials"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p id="footerText"></p>
+    <p class="footer__contact">
+      <a id="footerEmail" href="#">Email</a>
+      <span class="footer__sep" aria-hidden="true">·</span>
+      <a href="#top">Back to top ↑</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ── Case study dialog ──────────────────────────────── -->
+<dialog class="case" id="caseStudy" aria-labelledby="caseTitle">
+  <div class="case__bar">
+    <p class="case__eyebrow" id="caseEyebrow">Case study</p>
+    <button class="case__close" id="caseClose" type="button" aria-label="Close case study">Close</button>
+  </div>
+  <div class="case__body" id="caseBody"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
