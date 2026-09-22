@@ -146,8 +146,11 @@ block with the essentials. The project details do need JavaScript.
 
 These need your input or are deliberately out of scope.
 
-1. **No links to repositories or live demos.** The single highest-value remaining fix.
-   A deployed project with a real URL is the strongest artefact you can have.
+1. ~~**No links to repositories or live demos.**~~ **Done for one project.** The meeting-QR
+   project now has both a live URL and a repository link, and it is the strongest evidence on
+   the page that something shipped and is being used. The other four projects still have no
+   public URL. Deploying one more (ScholarOS is the obvious candidate) remains the highest-value
+   remaining fix.
 2. **No system diagram.** A simple boxes-and-arrows diagram of the ScholarOS sync flow
    would attach directly to the flagship case study.
 3. **No metrics.** The backend guides are emphatic that before/after numbers matter,
@@ -161,6 +164,9 @@ These need your input or are deliberately out of scope.
    visible to anyone who checks.
 7. **Never claim production experience you do not have.** The tiered skills section is
    deliberately worded to avoid this. Keep it honest as you apply for roles.
+8. **The LinkedIn and X links are still placeholders**, and there is no résumé PDF. Those
+   three are the only remaining dead ends on the page, and all three need a real URL or file
+   from you. The site hides them rather than rendering something that 404s.
 
 Also fixed, and worth knowing because it was visible to every visitor and invisible to
 inspection: the toast was shown on **every page load** as an empty black pill sitting
@@ -190,23 +196,44 @@ Two more, found by checking the site the way the research says to check it:
 
 ## Re-running the checks
 
-The one-off scripts are removed, but the checks are worth redoing after any change. What
-each one actually looked at, so you or anyone can rebuild them:
+These are now a script instead of throwaway snippets: **`tools/audit.js`**. Paste the whole
+file into the browser console on the page you want to check, then `await __audit.run()`. It
+prints a pass/fail table and returns the full report. It has no dependencies, matching the
+site. Run it in both themes and at 390 / 768 / 1200 / 1440px, and again with a case study open.
+
+What each check actually looks at, so you could rebuild any of them:
 
 - **Contrast**: for every element with its own text, walk up the ancestor chain compositing
   `backgroundColor` values, then compare the text colour against that real painted
   background. Do not compare raw hex values, and do not sample during a CSS transition;
-  wait about 1.2s first. Thresholds are 3:1 for large text, 4.5:1 otherwise.
+  wait about 1.2s first. Thresholds are 3:1 for large text, 4.5:1 otherwise. If an ancestor
+  paints a `background-image`, the audit reports the element as unmeasurable rather than
+  guessing and passing it.
 - **Target size**: every `a` and `button` should be at least 24x24 unless it sits inside a
   sentence, which WCAG exempts.
-- **Accessible names**: every control needs `aria-label`, `title`, a `<label for>`, or text.
+- **Accessible names**: every control needs `aria-label`, `aria-labelledby`, `title`, a
+  `<label for>`, or text.
 - **Heading continuity**: walk `h1`-`h6` in document order and flag any jump over a level.
 - **Empty painted elements**: any element with no text, no children, and a visible background
   or border is a defect. This is the check that catches the toast bug, so do not exempt
-  live regions from it.
-- **Overflow**: `scrollWidth > clientWidth` at 390, 768 and 1200px.
+  live regions from it. Deliberate decoration (the theme-toggle icon, the availability dot)
+  must carry `aria-hidden="true"` and is reported in a separate "decorative" list, so the
+  exemption is visible rather than silent.
+- **Overflow**: `scrollWidth > clientWidth` at 390, 768 and 1200px, with the offending
+  elements named.
+- **Links**: flag anything empty, `"#"`, or containing a placeholder, plus any `#fragment`
+  with no matching element on the page.
 - **Console**: enable `Log` and `Runtime` domains *before* loading, then confirm capture
   works by emitting one deliberate error. An empty console is otherwise indistinguishable
-  from broken capture.
+  from broken capture. The audit checks runtime state; console capture is a browser-side step.
 - **Performance**: register a `PerformanceObserver` for `largest-contentful-paint` via
   `Page.addScriptToEvaluateOnNewDocument` before navigating, or LCP comes back empty.
+
+### Latest measured run
+
+After adding the meeting-QR case study and the real GitHub links, at 1440px dark, 1440px
+light, 390px, and with a case study open in light theme: **0 problems** in every run.
+No contrast failures across 130-163 measured elements, no small targets, no unnamed
+controls, no heading jumps, no empty painted elements, no unresolved links, no overflow.
+The two `aria-hidden` shapes were reported as decorative, which is what should happen.
+

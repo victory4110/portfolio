@@ -94,36 +94,61 @@ the pattern this site is built around.
 
 ### Links are never dead
 
-Any `link` or project URL that is empty or `"#"` is skipped rather than rendered. A
-button that goes nowhere is worse than no button. So the Résumé button is currently
-hidden; set its `href` to `assets/resume.pdf` and it appears.
+Any `link` or project URL that is empty, `"#"`, or still contains a placeholder
+(`your-username`, `example.com`, `tbd`, `todo`, `changeme`) is skipped rather than rendered. A
+button that goes nowhere is worse than no button.
+
+Live now: the hero shows **Email me** and **GitHub**, and the project cards carry real
+buttons. Still hidden because the destination is not real:
+
+| Entry | What it needs |
+| --- | --- |
+| Résumé (PDF) | Put a PDF at `assets/resume.pdf`, set `href` to `assets/resume.pdf` |
+| LinkedIn, in `links` and `contact.socials` | Your real profile URL |
+| X / Twitter | Your real profile URL |
+
+Set any of those and the button appears on its own. Nothing else to change.
+
+## Checking your work
+
+`tools/audit.js` is the checks from `RESEARCH.md` as something you can actually run. It has
+no dependencies. Open the site, paste the whole file into the browser console, then:
+
+```js
+await __audit.run()
+```
+
+It prints a pass/fail table and returns the full report. Run it in **both themes** and at
+**390 / 768 / 1200px**, then switch the theme and run again. It reports the theme and
+viewport it measured, so a run is never ambiguous.
+
+What it checks: WCAG AA contrast against real composited backgrounds, 24px target sizes,
+accessible names, heading continuity, elements that paint but have no content, unresolved
+and dead links, and horizontal overflow. An element that deliberately holds a shape (the
+theme toggle icon, the availability dot) must say `aria-hidden="true"`, and is listed as
+decorative rather than counted as a defect.
+
+## Publishing it
+
+Already deployed: **https://victory4110.github.io/portfolio/** from `main` / root. To push a
+change:
+
+```bash
+git add . && git commit -m "What changed" && git push
+```
+
+Pages rebuilds itself in about a minute.
+
+Netlify works as an alternative, drag-and-drop at https://app.netlify.com/drop.
+
+For a custom domain (research recommends `yourname.dev`): add a `CNAME` file containing the
+domain, point a `CNAME` DNS record at `victory4110.github.io`, then enable HTTPS in
+Settings → Pages.
 
 ## Why there are no percentage skill bars
 
 Repeatedly identified in the research as a mistake: nobody knows what "85% React" means,
 and it invites an interview question you cannot win. See `RESEARCH.md`.
-
-## Publishing it
-
-**Netlify (drag and drop)**
-
-1. Go to https://app.netlify.com/drop
-2. Drag the whole `portfolio` folder onto the page
-
-**GitHub Pages**
-
-```bash
-git add . && git commit -m "Portfolio"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/portfolio.git
-git push -u origin main
-```
-
-Then Settings → Pages → Source: `main` / root. Live at
-`https://YOUR-USERNAME.github.io/portfolio/`.
-
-After deploying, update the `og:` tags in `index.html` so link previews are correct, and
-consider a custom domain (research recommends `yourname.dev`).
 
 ## Files
 
@@ -135,21 +160,25 @@ portfolio/
 ├── content.js    ← Your content. This is the file you edit.
 ├── RESEARCH.md   Why the site is built this way, with sources.
 ├── README.md     This file.
+├── tools/        audit.js — the checks, runnable in the browser console.
 └── assets/       Photos and PDFs.
 ```
 
 ## Verified, not assumed
 
-Checked by measurement in a real browser, in both themes and at 390 / 768 / 1200px:
+Re-run with `tools/audit.js` after today's content changes. Checked by measurement in a real
+browser, in both themes and at 390 / 768 / 1200 / 1440px:
 
-- Zero WCAG AA contrast failures across 120 rendered text elements, in both themes,
-  measured against real composited backgrounds
+- Zero WCAG AA contrast failures across 130-134 rendered text elements per width, in both
+  themes, measured against real composited backgrounds (163 elements with a case study open)
 - 22 interactive controls, all with accessible names and visible focus rings, no heading skips
 - No horizontal overflow at any tested width
-- Case-study dialog: native modal, focus enters and cannot escape to the page behind,
-  closes on Escape and backdrop click, returns focus to the trigger, and syncs with the URL
-  so deep links and back/forward work
-- Zero dead links, no empty-but-painted elements, no console or runtime errors
+- No unresolved or dead links; every external URL resolves
+- No element paints without content
+- Case-study dialog: native modal, focus enters and cannot escape to the page behind, opens
+  from a deep link, closes on Escape and backdrop click, returns focus to the trigger, and
+  syncs with the URL so back/forward work
+- Zero console or runtime errors
 - LCP 120-790ms, FCP 120ms, CLS 0, 4 requests, 59.7KB transferred
 - Still readable with JavaScript disabled
 
