@@ -261,8 +261,8 @@ window.PORTFOLIO = {
       blurb:
         "Hand-built with no framework and no build step, designed to still work when JavaScript does not.",
       tags: ["HTML", "CSS", "JavaScript", "Accessibility"],
-      live: "",
-      code: "https://github.com/your-username/portfolio",
+      live: "https://victory4110.github.io/portfolio/",
+      code: "https://github.com/victory4110/portfolio",
       caseStudy: {
         summary:
           "I built this without a framework on purpose, so the fundamentals are visible rather than hidden behind a build tool.",
