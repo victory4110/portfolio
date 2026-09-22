@@ -6,8 +6,12 @@ sources.
 
 ## Run it
 
+This folder lives at `~/Desktop/Workshops/portfolio`, alongside your other workshop
+projects. It is its own git repository, so `Workshops/.gitignore` lists `portfolio/` to stop
+the outer folder's repo from swallowing it.
+
 ```bash
-cd ~/Projects/portfolio
+cd ~/Desktop/Workshops/portfolio
 python3 -m http.server 4173
 ```
 
