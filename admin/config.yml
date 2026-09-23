@@ -1,6 +1,6 @@
 backend:
   name: turbo-github
-  turbo_site_id: REPLACE_WITH_DECAP_TURBO_SITE_ID
+  turbo_site_id: 7df30835-618d-4780-84db-7ea53ddd86e2
   branch: main
 
 media_folder: "assets/uploads"

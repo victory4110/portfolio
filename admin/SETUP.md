@@ -11,7 +11,7 @@ service before it may publish changes.
    - Config path: `admin/config.yml`
    - Admin URL: `https://victory4110.github.io/portfolio/admin/`
 4. Copy the Site ID from the Turbo overview.
-5. Replace `REPLACE_WITH_DECAP_TURBO_SITE_ID` in `admin/config.yml` with that ID.
+5. Add the Site ID to `admin/config.yml`.
 
 After that, log in at https://victory4110.github.io/portfolio/admin/. Publishing from the
 editor commits `content.json` and uploaded images to GitHub, which triggers GitHub Pages.
