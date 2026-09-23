@@ -4,6 +4,11 @@ Researched 2026-09-22. This file is the reasoning behind the site's structure, s
 can re-check it later or argue with it. Every claim below is sourced; the last section
 lists what the research says but this site still does not do.
 
+Updated 2026-09-23 after a second review against GitHub's job-search guidance, WCAG 2.2,
+Google's Core Web Vitals guidance, Google Search profile-page documentation, and Nielsen
+Norman Group hiring-manager research. This pass strengthened scan order, project context,
+external-link labels, metadata, and the distinction between a gallery and evidence of work.
+
 ## Sources consulted
 
 | Source | What it gave |
@@ -15,6 +20,10 @@ lists what the research says but this site still does not do.
 | [FreeCodeCamp review of 50 portfolios](https://www.freecodecamp.org/news/i-reviewed-fifty-portfolios-on-reddit-and-this-is-what-i-learned-e5d2b43150bc/) | Accessibility failure rates, no percentage bars |
 | [web.dev: Core Web Vitals thresholds](https://web.dev/articles/defining-core-web-vitals-thresholds) | LCP / INP / CLS targets |
 | [DEV.to: 40+ portfolio reviews](https://dev.to/kethmars/what-i-learned-after-reviewing-over-40-developer-portfolios-9-tips-for-a-better-portfolio-4me7) | Contact in header and footer, colour discipline |
+| [GitHub Docs: using your profile to enhance your résumé](https://docs.github.com/en/account-and-profile/tutorials/using-your-github-profile-to-enhance-your-resume) | Keep the bio concise, highlight 3–5 relevant projects, and make projects quick to understand |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) | Descriptive labels, visible keyboard focus, target size, contrast and navigable structure |
+| [Core Web Vitals thresholds](https://web.dev/articles/defining-core-web-vitals-thresholds) | LCP ≤2.5s, INP ≤200ms and CLS ≤0.1 at the 75th percentile |
+| [Google profile-page structured data](https://developers.google.com/search/docs/appearance/structured-data/profile-page) | Machine-readable identity and verified external profiles |
 
 One caution on a statistic you will see everywhere: the "6 to 7 second scan" comes from
 [eye-tracking of **resumes**](https://www.wonsulting.com/job-search-hub/hidden-eye-tracker-how-recruiters-actually-read-resumes),

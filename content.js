@@ -34,7 +34,8 @@ window.PORTFOLIO = {
 
   /* ── Buttons under your name ──────────────────────────── */
   links: [
-    { label: "Email me", href: "mailto:victoryogundipe4110@gmail.com", primary: true },
+    { label: "View selected work", href: "#work", primary: true },
+    { label: "Email me", href: "mailto:victoryogundipe4110@gmail.com" },
     { label: "GitHub", href: "https://github.com/victory4110" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/ogundipe-victory-708875337" },
     { label: "Résumé (PDF)", href: "assets/resume.pdf" },
@@ -128,6 +129,8 @@ window.PORTFOLIO = {
       live: "",
       code: "",
       featured: true,
+      type: "Offline-first platform",
+      scope: "End-to-end engineering",
       architecture: [
         { label: "Desktop UI", detail: "Tauri client" },
         { label: "Local core", detail: "Rust + SQLite" },
@@ -168,6 +171,8 @@ window.PORTFOLIO = {
       tags: ["Next.js", "MongoDB", "RBAC", "Zod"],
       live: "",
       code: "",
+      type: "Internal operations",
+      scope: "Backend & infrastructure",
       caseStudy: {
         summary:
           "An internal admin tool for a team that needed different people to have different levels of access to the same data.",
@@ -197,6 +202,8 @@ window.PORTFOLIO = {
       tags: ["Solidity", "Hardhat", "TypeScript", "Testing"],
       live: "",
       code: "",
+      type: "Web3 learning project",
+      scope: "Contract & test suite",
       caseStudy: {
         summary:
           "A token contract taken all the way through the toolchain rather than stopped at the contract file.",
@@ -226,6 +233,8 @@ window.PORTFOLIO = {
       tags: ["JavaScript", "GitHub Pages", "Node.js", "Testing"],
       live: "https://victory4110.github.io/meeting/",
       code: "https://github.com/victory4110/meeting",
+      type: "Production utility",
+      scope: "End-to-end engineering",
       caseStudy: {
         summary:
           "A QR code is just a picture of a URL, so once it is printed it cannot be edited. This moves the part that changes behind the part that does not.",
@@ -255,6 +264,8 @@ window.PORTFOLIO = {
       tags: ["HTML", "CSS", "JavaScript", "Accessibility"],
       live: "https://victory4110.github.io/portfolio/",
       code: "https://github.com/victory4110/portfolio",
+      type: "Personal platform",
+      scope: "Design & frontend",
       caseStudy: {
         summary:
           "I built this without a framework on purpose, so the fundamentals are visible rather than hidden behind a build tool.",

@@ -162,6 +162,7 @@
     if (/^https?:/.test(link.href)) {
       a.target = "_blank";
       a.rel = "noopener noreferrer";
+      a.setAttribute("aria-label", `${link.label} (opens in a new tab)`);
     }
     heroLinks.appendChild(a);
   });
@@ -199,6 +200,12 @@
     heading.id = "caseTitle";
     caseBody.appendChild(heading);
 
+    if (project.type || project.scope) {
+      caseBody.appendChild(
+        el("p", "case__meta", [project.type, project.scope].filter(Boolean).join(" · "))
+      );
+    }
+
     if (project.tags && project.tags.length) {
       const chips = el("div", "chips case__chips");
       project.tags.forEach((tag) => chips.appendChild(el("span", "chip", tag)));
@@ -223,6 +230,7 @@
       live.href = project.live;
       live.target = "_blank";
       live.rel = "noopener noreferrer";
+      live.setAttribute("aria-label", `${project.title} live site (opens in a new tab)`);
       links.appendChild(live);
     }
     if (!isUnresolved(project.code)) {
@@ -230,6 +238,7 @@
       code.href = project.code;
       code.target = "_blank";
       code.rel = "noopener noreferrer";
+      code.setAttribute("aria-label", `${project.title} source code (opens in a new tab)`);
       links.appendChild(code);
     }
     if (links.children.length) caseBody.appendChild(links);
@@ -297,6 +306,7 @@
       live.href = project.live;
       live.target = "_blank";
       live.rel = "noopener noreferrer";
+      live.setAttribute("aria-label", `${project.title} live site (opens in a new tab)`);
       wrap.appendChild(live);
     }
     if (!isUnresolved(project.code)) {
@@ -304,6 +314,7 @@
       code.href = project.code;
       code.target = "_blank";
       code.rel = "noopener noreferrer";
+      code.setAttribute("aria-label", `${project.title} source code (opens in a new tab)`);
       wrap.appendChild(code);
     }
     return wrap;
@@ -348,7 +359,9 @@
     box.hidden = false;
 
     const body = el("div", "featured__body");
-    body.appendChild(el("p", "featured__label", "Featured project"));
+    body.appendChild(
+      el("p", "featured__label", ["Featured project", featured.scope].filter(Boolean).join(" · "))
+    );
     body.appendChild(el("h3", "featured__title", featured.title));
     body.appendChild(el("p", "featured__blurb", featured.blurb));
 
@@ -384,6 +397,11 @@
     .filter((p) => p !== featured)
     .forEach((project) => {
       const card = el("article", "card reveal");
+      if (project.type || project.scope) {
+        card.appendChild(
+          el("p", "card__meta", [project.type, project.scope].filter(Boolean).join(" · "))
+        );
+      }
       card.appendChild(el("h3", "card__title", project.title));
       card.appendChild(el("p", "card__blurb", project.blurb));
 
@@ -471,6 +489,7 @@
     a.href = social.href;
     a.target = "_blank";
     a.rel = "noopener noreferrer";
+    a.setAttribute("aria-label", `${social.label} (opens in a new tab)`);
     socials.appendChild(a);
   });
 
