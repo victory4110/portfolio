@@ -1,5 +1,6 @@
 backend:
   name: turbo-github
+  repo: victory4110/portfolio
   turbo_site_id: 7df30835-618d-4780-84db-7ea53ddd86e2
   branch: main
 
