@@ -309,6 +309,30 @@
     return wrap;
   }
 
+  function architectureDiagram(project) {
+    if (!project.architecture || !project.architecture.length) return null;
+
+    const figure = el("figure", "architecture");
+    figure.setAttribute("aria-label", `${project.title} architecture at a glance`);
+    figure.appendChild(el("figcaption", "architecture__label", "Architecture at a glance"));
+
+    const flow = el("div", "architecture__flow");
+    project.architecture.forEach((item, index) => {
+      const node = el("div", "architecture__node");
+      node.appendChild(el("strong", null, item.label));
+      node.appendChild(el("span", null, item.detail));
+      flow.appendChild(node);
+
+      if (index < project.architecture.length - 1) {
+        const arrow = el("span", "architecture__arrow", "→");
+        arrow.setAttribute("aria-hidden", "true");
+        flow.appendChild(arrow);
+      }
+    });
+    figure.appendChild(flow);
+    return figure;
+  }
+
   function caseButton(project, className) {
     if (!project.caseStudy) return null;
     const btn = el("button", className || "btn btn--case", "Read the case study");
@@ -342,9 +366,14 @@
     if (actions.children.length) body.appendChild(actions);
 
     const preview = el("div", "featured__preview");
-    preview.appendChild(
-      el("span", null, featured.live ? "View the live site" : "Screenshots on request")
-    );
+    const diagram = architectureDiagram(featured);
+    if (diagram) {
+      preview.appendChild(diagram);
+    } else {
+      preview.appendChild(
+        el("span", "featured__placeholder", featured.live ? "View the live site" : "Screenshots on request")
+      );
+    }
 
     box.append(body, preview);
     box.classList.add("reveal");

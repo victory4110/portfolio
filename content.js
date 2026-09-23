@@ -36,8 +36,8 @@ window.PORTFOLIO = {
   links: [
     { label: "Email me", href: "mailto:victoryogundipe4110@gmail.com", primary: true },
     { label: "GitHub", href: "https://github.com/victory4110" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/your-username" }, // replace with your real profile URL
-    { label: "Résumé (PDF)", href: "#" }, // point this at assets/resume.pdf once you add it
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/ogundipe-victory-708875337" },
+    { label: "Résumé (PDF)", href: "assets/resume.pdf" },
   ],
 
   /* ── Skills: TIERED by real depth, not a flat list ──────
@@ -50,15 +50,7 @@ window.PORTFOLIO = {
     {
       level: "Strongest",
       note: "I have shipped working projects with these and can debug them without a tutorial.",
-      items: [
-        "TypeScript",
-        "Node.js",
-        "NestJS",
-        "MongoDB",
-        "Mongoose",
-        "React",
-        "Next.js",
-      ],
+      items: ["TypeScript", "Node.js", "NestJS", "MongoDB"],
     },
     {
       level: "Comfortable",
@@ -70,6 +62,8 @@ window.PORTFOLIO = {
         "Zod validation",
         "Jest & Supertest",
         "REST API design",
+        "Mongoose",
+        "React & Next.js",
         "Tailwind CSS",
         "TanStack Query",
         "Turborepo & npm workspaces",
@@ -94,18 +88,18 @@ window.PORTFOLIO = {
     {
       title: "Rust for the on-site client, TypeScript for the server",
       chose:
-        "The on-site apps are Tauri desktop applications with their own Rust backend: SQLite for local storage, an async tokio loop for sync, and mDNS to find the server on the LAN. The central API stays NestJS and MongoDB.",
-      why: "The installs are offline for most of the working day, so the client has to own durable local storage and survive being killed mid-write. Rust is good at that, and the server side is better off in the language I move fastest in.",
+        "Tauri and Rust own local storage, background sync and LAN discovery. The central API stays in NestJS and MongoDB.",
+      why: "School installs must keep working offline, while the central service benefits from the backend stack I use most productively.",
       cost:
-        "Two languages and two data models to keep in step. Every synced record has to agree on its shape across Rust structs, serde JSON and Mongoose schemas, and a mismatch only shows up when sync runs, on a machine I am not sitting at.",
+        "Rust structs, JSON payloads and Mongoose schemas must stay aligned across two languages and two data models.",
     },
     {
       title: "Offline-first sync instead of a cloud-only API",
       chose:
-        "School installs run their own local server and push records to a central API, rather than every client talking straight to the cloud.",
+        "Each school works against local storage and synchronizes with a central API when connectivity returns.",
       why: "Schools lose connectivity during the day. If the register cannot be taken when the internet drops, the software is useless there.",
       cost:
-        "I had to own duplicate-suppression and idempotency myself. Every pushed record carries a localId so a retry after a dropped connection does not create a second copy. A cloud-only design would have none of that work.",
+        "The sync layer has to handle retries and duplicate suppression. Records carry a local ID so a dropped connection does not create a second copy.",
     },
     {
       title: "Tenant credentials in headers for machine sync, JWT for humans",
@@ -113,15 +107,7 @@ window.PORTFOLIO = {
         "Server-to-server sync authenticates with a per-school id and secret header pair. Interactive users get JWT sessions with role checks.",
       why: "A scheduled sync job has no user to log in, so a session-based flow does not fit it.",
       cost:
-        "Two auth paths to maintain and reason about. I keep them separate on purpose so the machine path can be rotated per install without touching user accounts.",
-    },
-    {
-      title: "Tolerate a missing database at boot",
-      chose:
-        "The Mongoose connection is lazy with a short selection timeout, so the process starts even when the database is unreachable.",
-      why: "On-site installs get started before the database is ready. Crashing on boot there means someone has to drive out and restart it.",
-      cost:
-        "Failures surface later, on the first query rather than at startup, which is harder to debug. I accepted that in exchange for the service staying up.",
+        "There are two authentication paths to secure and maintain, although machine credentials can be rotated without affecting user accounts.",
     },
   ],
 
@@ -142,6 +128,12 @@ window.PORTFOLIO = {
       live: "",
       code: "",
       featured: true,
+      architecture: [
+        { label: "Desktop UI", detail: "Tauri client" },
+        { label: "Local core", detail: "Rust + SQLite" },
+        { label: "Sync API", detail: "NestJS" },
+        { label: "Central data", detail: "MongoDB" },
+      ],
       caseStudy: {
         summary:
           "School management software is usually sold as a cloud app, which assumes the school always has internet. ScholarOS instead assumes it usually does not. Each install runs locally and syncs up when it can.",
@@ -308,8 +300,8 @@ window.PORTFOLIO = {
     email: "victoryogundipe4110@gmail.com",
     socials: [
       { label: "GitHub", href: "https://github.com/victory4110" },
-      { label: "LinkedIn", href: "https://linkedin.com/in/your-username" }, // replace with your real profile URL
-      { label: "X / Twitter", href: "https://x.com/your-username" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/ogundipe-victory-708875337" },
+      { label: "X / Twitter", href: "https://x.com/your-username" }, // still a placeholder, hidden until you set it
     ],
   },
 

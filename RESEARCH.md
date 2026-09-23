@@ -45,7 +45,7 @@ why, and **what it cost**. The cost line is the one that reads as experience.
 the decisions, and what you would do differently.
 
 **4. Two to five projects, one flagship taking most of the space.**
-→ Four projects. ScholarOS is `featured: true` and gets the large card.
+→ Five projects. ScholarOS is `featured: true` and gets the large card.
 
 **5. Skills should be tiered by real depth.**
 Flat lists of 40 technologies read as unfocused and invite questions you cannot answer.
@@ -151,8 +151,8 @@ These need your input or are deliberately out of scope.
    the page that something shipped and is being used. The other four projects still have no
    public URL. Deploying one more (ScholarOS is the obvious candidate) remains the highest-value
    remaining fix.
-2. **No system diagram.** A simple boxes-and-arrows diagram of the ScholarOS sync flow
-   would attach directly to the flagship case study.
+2. ~~**No system diagram.**~~ **Done.** The flagship card now shows the core ScholarOS
+   path from the Tauri desktop client through Rust and SQLite to NestJS and MongoDB.
 3. **No metrics.** The backend guides are emphatic that before/after numbers matter,
    even as percentages ("reduced sync payload size by ~40%" is enough). You have to
    supply these from real work; inventing them would be worse than omitting them.
@@ -164,9 +164,8 @@ These need your input or are deliberately out of scope.
    visible to anyone who checks.
 7. **Never claim production experience you do not have.** The tiered skills section is
    deliberately worded to avoid this. Keep it honest as you apply for roles.
-8. **The LinkedIn and X links are still placeholders**, and there is no résumé PDF. Those
-   three are the only remaining dead ends on the page, and all three need a real URL or file
-   from you. The site hides them rather than rendering something that 404s.
+8. **The X link is still a placeholder.** LinkedIn and the résumé are now live. The site
+   hides the remaining placeholder rather than rendering something that goes nowhere.
 
 Also fixed, and worth knowing because it was visible to every visitor and invisible to
 inspection: the toast was shown on **every page load** as an empty black pill sitting
@@ -236,4 +235,3 @@ light, 390px, and with a case study open in light theme: **0 problems** in every
 No contrast failures across 130-163 measured elements, no small targets, no unnamed
 controls, no heading jumps, no empty painted elements, no unresolved links, no overflow.
 The two `aria-hidden` shapes were reported as decorative, which is what should happen.
-

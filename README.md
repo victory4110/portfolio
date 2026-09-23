@@ -93,7 +93,7 @@ caseStudy: {
 ```
 
 Exactly one project should have `featured: true`. It gets the large card at the top.
-Aim for two to five projects in total; one flagship plus three supporting projects is
+Aim for two to five projects in total; one flagship plus supporting projects is
 the pattern this site is built around.
 
 ### Links are never dead
@@ -102,16 +102,21 @@ Any `link` or project URL that is empty, `"#"`, or still contains a placeholder
 (`your-username`, `example.com`, `tbd`, `todo`, `changeme`) is skipped rather than rendered. A
 button that goes nowhere is worse than no button.
 
-Live now: the hero shows **Email me** and **GitHub**, and the project cards carry real
-buttons. Still hidden because the destination is not real:
+Live now: the hero shows **Email me**, **GitHub**, **LinkedIn** and **Résumé (PDF)**, and two
+of the five project cards carry real buttons (**meeting-qr**, **portfolio**). Everything
+below is real content, verified: each URL returns 200.
+
+Still hidden because the destination is not real:
 
 | Entry | What it needs |
 | --- | --- |
-| Résumé (PDF) | Put a PDF at `assets/resume.pdf`, set `href` to `assets/resume.pdf` |
-| LinkedIn, in `links` and `contact.socials` | Your real profile URL |
-| X / Twitter | Your real profile URL |
+| X / Twitter, in `contact.socials` | your real profile URL — still `x.com/your-username` |
+| ScholarOS `live` / `code` | a deployed URL and/or a public repo |
+| Poolot admin dashboard `live` / `code` | a deployed URL and/or a public repo (may never be public) |
+| ERC-20 token `live` / `code` | a public repo, if you want the Hardhat suite visible |
 
-Set any of those and the button appears on its own. Nothing else to change.
+Set any of those and the button appears on its own. Nothing else to change. A project with
+no real destination simply shows no buttons rather than a dead one.
 
 ## Checking your work
 
@@ -192,12 +197,3 @@ border colour (1.35:1 contrast, needs 4.5:1), a standalone project link was 23px
 `translate(-50%, 130%)` is relative to its own 22px height rather than the screen, and the
 scroll-reveal could blank the entire page if the animation's observer never fired.
 Details in `RESEARCH.md`.
-
-## Links that are not real yet are hidden
-
-The site will not render a link to a destination you have not set. That covers empty
-strings, `"#"`, and placeholders like `your-username`, `example.com` and `tbd`. So right
-now the hero shows only "Email me", because the GitHub and LinkedIn entries in
-`content.js` still point at `your-username`. Replace them with your real profile URLs and
-the buttons appear on their own. The project cards have no buttons yet for the same
-reason: every `live` and `code` field is still empty.
