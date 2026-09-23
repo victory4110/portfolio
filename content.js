@@ -20,7 +20,7 @@ window.PORTFOLIO = {
   location: "Nigeria",
   // Drop a photo at assets/avatar.jpg and it appears automatically.
   // Leave as "" to show your initials instead.
-  avatar: "",
+  avatar: "assets/avatar.jpg",
   availableForWork: true,
 
   /* ── Short bio (2–3 sentences is plenty) ──────────────── */
