@@ -40,7 +40,7 @@ deliberate, see finding 3.
 **2. The hero must land role, stack and domain.**
 → Hero now reads "Fullstack Developer — TypeScript, Node.js, NestJS", with the domain
 ("education and back-office systems") directly underneath. These come from `role`, the
-strongest skills tier and `focus` in `content.js`.
+strongest skills tier and `focus` in `content.json`.
 
 **3. Backend work is invisible, so sell decisions and trade-offs.**
 Screenshots cannot show a schema choice or an auth boundary. The recommended artefacts
@@ -124,10 +124,10 @@ Four requests, 59.7KB transferred, 58.5KB decoded:
 | `index.html` | (in navigation) | 6.7KB |
 | `styles.css` | 19.5KB | 19.3KB |
 | `main.js` | 18.1KB | 17.8KB |
-| `content.js` | 15.0KB | 14.7KB |
+| `content.json` | Content-dependent | Content-dependent |
 
 No framework, no build step and no webfont download are why this is fast. Note that
-`content.js` is currently larger than `main.js`, because it holds all your copy; if it
+`content.json` can become larger than `main.js`, because it holds all your copy; if it
 keeps growing, split the per-project case studies into a separate file loaded on demand.
 
 **10. Contact in both header and footer.**

@@ -1,0 +1,132 @@
+backend:
+  name: turbo-github
+  turbo_site_id: REPLACE_WITH_DECAP_TURBO_SITE_ID
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+site_url: "https://victory4110.github.io/portfolio/"
+display_url: "https://victory4110.github.io/portfolio/"
+logo_url: "https://victory4110.github.io/portfolio/assets/avatar.jpg"
+publish_mode: simple
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - name: "content"
+        label: "Portfolio content"
+        file: "content.json"
+        format: "json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Professional title", name: "role", widget: "string" }
+          - { label: "Specialist domain", name: "focus", widget: "string" }
+          - { label: "One-line introduction", name: "tagline", widget: "text" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Profile picture", name: "avatar", widget: "image", choose_url: false }
+          - { label: "Available for work", name: "availableForWork", widget: "boolean" }
+
+          - label: "About paragraphs"
+            name: "about"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+          - label: "Hero links"
+            name: "links"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Destination", name: "href", widget: "string" }
+              - { label: "Primary button", name: "primary", widget: "boolean", required: false, default: false }
+
+          - label: "Skill tiers"
+            name: "tiers"
+            widget: "list"
+            summary: "{{fields.level}}"
+            fields:
+              - { label: "Tier name", name: "level", widget: "string" }
+              - { label: "Description", name: "note", widget: "text" }
+              - label: "Skills"
+                name: "items"
+                widget: "list"
+                field: { label: "Skill", name: "skill", widget: "string" }
+
+          - label: "Engineering decisions"
+            name: "decisions"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "What I chose", name: "chose", widget: "text" }
+              - { label: "Why", name: "why", widget: "text" }
+              - { label: "What it cost", name: "cost", widget: "text" }
+
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Project title", name: "title", widget: "string" }
+              - { label: "URL slug", name: "slug", widget: "string", pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers and hyphens only"] }
+              - { label: "Short description", name: "blurb", widget: "text" }
+              - { label: "Project type", name: "type", widget: "string" }
+              - { label: "Your scope", name: "scope", widget: "string" }
+              - label: "Technology tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Technology", name: "technology", widget: "string" }
+              - { label: "Live site URL", name: "live", widget: "string", required: false }
+              - { label: "Source-code URL", name: "code", widget: "string", required: false }
+              - { label: "Featured project", name: "featured", widget: "boolean", required: false, default: false }
+              - label: "Architecture diagram"
+                name: "architecture"
+                widget: "list"
+                required: false
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Component", name: "label", widget: "string" }
+                  - { label: "Technology", name: "detail", widget: "string" }
+              - label: "Case study"
+                name: "caseStudy"
+                widget: "object"
+                fields:
+                  - { label: "Summary", name: "summary", widget: "text" }
+                  - { label: "Problem", name: "problem", widget: "text" }
+                  - { label: "My role", name: "role", widget: "text" }
+                  - label: "What I built"
+                    name: "built"
+                    widget: "list"
+                    field: { label: "Item", name: "item", widget: "text" }
+                  - label: "Decisions"
+                    name: "decisions"
+                    widget: "list"
+                    field: { label: "Decision", name: "decision", widget: "text" }
+                  - { label: "What I would do differently", name: "honest", widget: "text" }
+
+          - label: "Background timeline"
+            name: "timeline"
+            widget: "list"
+            summary: "{{fields.period}} — {{fields.title}}"
+            fields:
+              - { label: "Period", name: "period", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Details", name: "detail", widget: "text" }
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Message", name: "blurb", widget: "text" }
+              - { label: "Email", name: "email", widget: "string" }
+              - label: "Social profiles"
+                name: "socials"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "URL", name: "href", widget: "string" }
+
+          - { label: "Footer text", name: "footer", widget: "string" }

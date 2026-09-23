@@ -15,14 +15,14 @@ cd ~/Desktop/Workshops/portfolio
 python3 -m http.server 4173
 ```
 
-Then open http://127.0.0.1:4173. Opening `index.html` by double-clicking also works.
+Then open http://127.0.0.1:4173.
 
 ## Editing your content
 
-**Everything you normally want to change lives in `content.js`.** You do not need to touch
-the HTML, CSS or JavaScript for day-to-day updates.
+**Everything you normally want to change lives in `content.json`.** You can edit it through
+the private admin page without touching HTML, CSS or JavaScript.
 
-| What you want to change | Where in `content.js` |
+| What you want to change | Where in `content.json` |
 | --- | --- |
 | Your name | `name` |
 | Professional title | `role` |
@@ -101,7 +101,8 @@ Any `link` or project URL that is empty, `"#"`, or still contains a placeholder
 (`your-username`, `example.com`, `tbd`, `todo`, `changeme`) is skipped rather than rendered. A
 button that goes nowhere is worse than no button.
 
-Live now: the hero shows **Email me**, **GitHub**, **LinkedIn** and **Résumé (PDF)**, and two
+Live now: the hero shows **View selected work**, **Email me**, **GitHub**, **LinkedIn** and
+**Résumé (PDF)**, and two
 of the five project cards carry real buttons (**meeting-qr**, **portfolio**). Everything
 below is real content, verified: each URL returns 200.
 
@@ -147,6 +148,12 @@ git add . && git commit -m "What changed" && git push
 
 Pages rebuilds itself in about a minute.
 
+## Admin editor
+
+The editing interface lives at `https://victory4110.github.io/portfolio/admin/`. It edits
+`content.json`, accepts image uploads into `assets/uploads`, and publishes through GitHub.
+Complete the one-time secure login connection described in `admin/SETUP.md` before using it.
+
 Netlify works as an alternative, drag-and-drop at https://app.netlify.com/drop.
 
 For a custom domain (research recommends `yourname.dev`): add a `CNAME` file containing the
@@ -164,8 +171,9 @@ and it invites an interview question you cannot win. See `RESEARCH.md`.
 portfolio/
 ├── index.html    Structure and static fallback content
 ├── styles.css    All styling. Numbered sections at the top.
-├── main.js       Renders content.js and runs the case-study dialog.
-├── content.js    ← Your content. This is the file you edit.
+├── main.js       Loads content.json and runs the site interactions.
+├── content.json  ← Portfolio content, managed through /admin/.
+├── admin/        Decap CMS editor and its field configuration.
 ├── RESEARCH.md   Why the site is built this way, with sources.
 ├── README.md     This file.
 ├── tools/        audit.js — the checks, runnable in the browser console.
