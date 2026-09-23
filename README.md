@@ -25,7 +25,7 @@ the HTML, CSS or JavaScript for day-to-day updates.
 | What you want to change | Where in `content.js` |
 | --- | --- |
 | Your name | `name` |
-| Title, and which half you are strongest in | `role`, `lean` |
+| Professional title | `role` |
 | The domain you specialise in | `focus` |
 | The one-line pitch | `tagline` |
 | Open-to-work badge | `availableForWork` |
@@ -40,16 +40,15 @@ the HTML, CSS or JavaScript for day-to-day updates.
 
 After saving, refresh the browser tab.
 
-### The three names that matter most
+### The positioning fields that matter most
 
-`role`, `lean` and `focus` build your positioning line, which is the first thing anyone
+`role` and `focus` build your positioning, which is the first thing anyone
 reads:
 
-> Fullstack Engineer, backend depth — TypeScript, Node.js, NestJS
+> Fullstack Developer — TypeScript, Node.js, NestJS
 
-The `lean` tells a hiring manager where to slot you, and `focus` tells them which problem
-domain you understand. Both are doing real work. If you drop the lean, you read as a
-generic fullstack developer, which is the most crowded title in the industry.
+The role states what you do, the strongest skill tier supplies the stack, and `focus`
+shows the kinds of systems you understand.
 
 ### Skills are tiered, on purpose
 

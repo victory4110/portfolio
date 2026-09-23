@@ -89,7 +89,7 @@
   });
 
   /* ── Head / identity ────────────────────────────────────── */
-  document.title = `${data.name} — ${data.role}, ${data.lean}`;
+  document.title = `${data.name} — ${data.role}`;
 
   const brand = document.querySelector('[data-content="name"]');
   if (brand) brand.textContent = data.name;
@@ -98,11 +98,11 @@
   setText("#heroTagline", data.tagline);
   setText("#footerText", data.footer);
 
-  // Positioning line: lean + primary stack + domain.
+  // Positioning line: role + primary stack.
   const stackHint = (data.tiers?.[0]?.items || []).slice(0, 3).join(", ");
   setText(
     "#heroPositioning",
-    [data.role + ", " + (data.lean || "").toLowerCase(), stackHint]
+    [data.role, stackHint]
       .filter(Boolean)
       .join(" — ")
   );
@@ -114,7 +114,7 @@
     if (data.availableForWork) {
       setText(
         "#availabilityText",
-        "Open to junior fullstack and backend roles"
+        "Open to fullstack development roles"
       );
     } else {
       availability.classList.add("pill--idle");

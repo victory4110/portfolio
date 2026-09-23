@@ -4,17 +4,14 @@
  *  Change the text between the quotes, save, refresh the page.
  *
  *  Positioning (read this once, then it will make sense):
- *  "Fullstack developer" on its own is the most common title in
- *  tech and signals nothing. What works is LEAN + STACK + DOMAIN.
- *  Keep those three things visible in `role`, `lean` and `focus`.
+ *  Keep the role, primary stack and product domain visible.
  * ─────────────────────────────────────────────────────────────
  */
 
 window.PORTFOLIO = {
   /* ── Identity ─────────────────────────────────────────── */
   name: "Victory Ogundipe",
-  role: "Fullstack Engineer",
-  lean: "Backend Depth",
+  role: "Fullstack Developer",
   // The domain you go deep in. This is what makes you specific
   // instead of "another fullstack dev". Change it if the truth changes.
   focus: "Education & back-office systems",
@@ -291,7 +288,7 @@ window.PORTFOLIO = {
   timeline: [
     {
       period: "2026 — now",
-      title: "Fullstack engineer (self-taught, building in public)",
+      title: "Fullstack developer",
       detail:
         "Building TypeScript systems end to end: NestJS and MongoDB services on the backend, React and Next.js on the frontend.",
     },
@@ -307,7 +304,7 @@ window.PORTFOLIO = {
   contact: {
     heading: "Let's build something",
     blurb:
-      "I'm looking for a junior fullstack or backend role. If you want to talk about the sync design above, or anything else on this page, email is the fastest way to reach me.",
+      "I'm looking for a fullstack development role. If you want to talk about the systems and projects above, email is the fastest way to reach me.",
     email: "victoryogundipe4110@gmail.com",
     socials: [
       { label: "GitHub", href: "https://github.com/victory4110" },

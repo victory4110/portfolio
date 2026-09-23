@@ -16,7 +16,7 @@ external-link labels, metadata, and the distinction between a gallery and eviden
 | [What 60+ Hiring Managers Look For](https://soychristian.com/contents/developer-portfolio-guide/) (survey of 60+ hiring managers, via Profy.dev) | Overall structure, case study content, mistakes list |
 | [Josh Comeau, Building an Effective Dev Portfolio](https://www.joshwcomeau.com/effective-portfolio/) ([notes](https://www.jenkens.dev/blog/leveling-up-your-portfolio/)) | The "tour guide" idea, project detail pages, personal copy |
 | [ShowProof: backend portfolio](https://showproof.io/guides/backend-developer-portfolio/) | Selling decisions and trade-offs instead of screenshots |
-| [ShowProof: fullstack portfolio](https://showproof.io/guides/fullstack-developer-portfolio/) | The "senior in nothing" trap, lean, tiered skills |
+| [ShowProof: fullstack portfolio](https://showproof.io/guides/fullstack-developer-portfolio/) | Clear positioning and tiered skills |
 | [FreeCodeCamp review of 50 portfolios](https://www.freecodecamp.org/news/i-reviewed-fifty-portfolios-on-reddit-and-this-is-what-i-learned-e5d2b43150bc/) | Accessibility failure rates, no percentage bars |
 | [web.dev: Core Web Vitals thresholds](https://web.dev/articles/defining-core-web-vitals-thresholds) | LCP / INP / CLS targets |
 | [DEV.to: 40+ portfolio reviews](https://dev.to/kethmars/what-i-learned-after-reviewing-over-40-developer-portfolios-9-tips-for-a-better-portfolio-4me7) | Contact in header and footer, colour discipline |
@@ -37,12 +37,10 @@ not portfolios. The portfolio figure that is actually supported is roughly
 This site uses hero → selected work → how I work → about → contact. The extra section is
 deliberate, see finding 3.
 
-**2. The hero must land lean, stack and domain.**
-"Fullstack developer" is the most common title in tech and by itself reads as junior in
-two things (ShowProof). What works is a lean plus a stack plus a domain.
-→ Hero now reads "Fullstack Engineer, backend depth — TypeScript, Node.js, NestJS",
-with the domain ("education and back-office systems") directly underneath. Both come
-from `role`, `lean` and `focus` in `content.js`.
+**2. The hero must land role, stack and domain.**
+→ Hero now reads "Fullstack Developer — TypeScript, Node.js, NestJS", with the domain
+("education and back-office systems") directly underneath. These come from `role`, the
+strongest skills tier and `focus` in `content.js`.
 
 **3. Backend work is invisible, so sell decisions and trade-offs.**
 Screenshots cannot show a schema choice or an auth boundary. The recommended artefacts
