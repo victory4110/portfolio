@@ -1,25 +1,16 @@
 /* ──────────────────────────────────────────────────────────
-   Loads content.json, renders the page, and runs the interactions.
-   Use /admin/ for normal content updates.
+   Renders the page from window.PORTFOLIO (content.js).
+   You shouldn't need to edit this file to update your content.
    ────────────────────────────────────────────────────────── */
-(async function () {
+(function () {
   "use strict";
 
-  let data = window.PORTFOLIO;
-  if (!data) {
-    try {
-      const response = await fetch("content.json", { cache: "no-cache" });
-      if (!response.ok) throw new Error(`content.json returned ${response.status}`);
-      data = await response.json();
-    } catch (error) {
-      console.error("Portfolio content could not be loaded.", error);
-    }
-  }
+  const data = window.PORTFOLIO;
   const $ = (sel) => document.querySelector(sel);
   const root = document.documentElement;
 
   if (!data) {
-    console.error("No portfolio content is available.");
+    console.error("content.js did not load, so the page has no content.");
     return;
   }
 
