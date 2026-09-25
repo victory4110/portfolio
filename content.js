@@ -11,12 +11,12 @@
 window.PORTFOLIO = {
   /* ── Identity ─────────────────────────────────────────── */
   name: "Victory Ogundipe",
-  role: "Fullstack Developer",
+  role: "Full-Stack Developer",
   // The domain you go deep in. This is what makes you specific
   // instead of "another fullstack dev". Change it if the truth changes.
   focus: "Education & back-office systems",
   tagline:
-    "I build the API and the interface, from database schema to shipped screen.",
+    "I build complete digital products across frontend and backend development, from responsive interfaces and API design to databases, desktop applications, and deployment. I work with TypeScript, Node.js, React, Next.js, NestJS, MongoDB, and Rust to create practical systems that are reliable, maintainable, and easy to use.",
   location: "Ogbomoso, Oyo State, Nigeria",
   // Drop a photo at assets/avatar.jpg and it appears automatically.
   // Leave as "" to show your initials instead.
