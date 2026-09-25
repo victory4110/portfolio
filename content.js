@@ -258,7 +258,7 @@ window.PORTFOLIO = {
       blurb:
         "Hand-built with no framework and no build step, designed to still work when JavaScript does not.",
       tags: ["HTML", "CSS", "JavaScript", "Accessibility"],
-      live: "https://victory4110.github.io/portfolio/",
+      live: "https://victory-ogundipe-portfolio.vercel.app/",
       code: "https://github.com/victory4110/portfolio",
       type: "Personal platform",
       scope: "Design & frontend",

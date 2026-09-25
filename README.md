@@ -136,7 +136,7 @@ decorative rather than counted as a defect.
 
 ## Publishing it
 
-Already deployed: **https://victory4110.github.io/portfolio/** from `main` / root. To push a
+Primary deployment: **https://victory-ogundipe-portfolio.vercel.app/**, connected to the GitHub repository. GitHub Pages remains available as a fallback. To push a
 change:
 
 ```bash
