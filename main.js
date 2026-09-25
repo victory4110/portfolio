@@ -98,14 +98,8 @@
   setText("#heroTagline", data.tagline);
   setText("#footerText", data.footer);
 
-  // Positioning line: role + primary stack.
-  const stackHint = (data.tiers?.[0]?.items || []).slice(0, 3).join(", ");
-  setText(
-    "#heroPositioning",
-    [data.role, stackHint]
-      .filter(Boolean)
-      .join(" — ")
-  );
+  // Keep the hero focused on the role; detailed technologies belong in Skills.
+  setText("#heroPositioning", data.role);
 
   if (data.focus) setText("#heroFocus", `Focused on ${data.focus.toLowerCase()}.`);
 
