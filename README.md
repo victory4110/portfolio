@@ -101,7 +101,7 @@ Any `link` or project URL that is empty, `"#"`, or still contains a placeholder
 (`your-username`, `example.com`, `tbd`, `todo`, `changeme`) is skipped rather than rendered. A
 button that goes nowhere is worse than no button.
 
-Live now: the hero shows **Email me**, **GitHub**, and **LinkedIn**. The DHave Gadgetz,
+Live now: the hero shows **Email me**, **GitHub**, **LinkedIn**, and **Résumé (PDF)**. The DHave Gadgetz,
 meeting QR, and portfolio project cards carry public links. Private collaboration projects
 do not show dead or inaccessible source buttons.
 

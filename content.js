@@ -35,6 +35,7 @@ window.PORTFOLIO = {
     { label: "Email me", href: "mailto:victoryogundipe4110@gmail.com" },
     { label: "GitHub", href: "https://github.com/victory4110" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/ogundipe-victory-708875337" },
+    { label: "Résumé (PDF)", href: "assets/resume.pdf" },
   ],
 
   /* ── Skills: TIERED by real depth, not a flat list ──────
