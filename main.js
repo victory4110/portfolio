@@ -114,7 +114,7 @@
     if (data.availableForWork) {
       setText(
         "#availabilityText",
-        "Open to fullstack development roles"
+        "Open to full-time, internship, freelance & remote opportunities"
       );
     } else {
       availability.classList.add("pill--idle");
@@ -153,8 +153,7 @@
   const heroLinks = $("#heroLinks");
   (data.links || []).forEach((link) => {
     // A button that goes nowhere is worse than no button at all. Skip anything
-    // without a real destination yet (an unadded résumé, or a profile URL still
-    // set to "your-username"), then it appears on its own once you add one.
+    // without a real destination yet; it appears on its own once you add one.
     if (isUnresolved(link.href)) return;
 
     const a = el("a", "btn" + (link.primary ? " btn--primary" : ""), link.label);

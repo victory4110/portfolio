@@ -17,7 +17,7 @@ window.PORTFOLIO = {
   focus: "Education & back-office systems",
   tagline:
     "I build the API and the interface, from database schema to shipped screen.",
-  location: "Nigeria",
+  location: "Ogbomoso, Oyo State, Nigeria",
   // Drop a photo at assets/avatar.jpg and it appears automatically.
   // Leave as "" to show your initials instead.
   avatar: "assets/avatar.jpg",
@@ -35,7 +35,6 @@ window.PORTFOLIO = {
     { label: "Email me", href: "mailto:victoryogundipe4110@gmail.com" },
     { label: "GitHub", href: "https://github.com/victory4110" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/ogundipe-victory-708875337" },
-    { label: "Résumé (PDF)", href: "assets/resume.pdf" },
   ],
 
   /* ── Skills: TIERED by real depth, not a flat list ──────
@@ -48,13 +47,13 @@ window.PORTFOLIO = {
     {
       level: "Strongest",
       note: "I have shipped working projects with these and can debug them without a tutorial.",
-      items: ["TypeScript", "Node.js", "NestJS", "MongoDB"],
+      items: ["TypeScript", "Node.js", "Rust", "NestJS", "MongoDB"],
     },
     {
       level: "Comfortable",
       note: "Used in real projects. Productive, still learning the sharp edges.",
       items: [
-        "Rust & Tauri (desktop app backends)",
+        "Tauri desktop applications",
         "SQLite / rusqlite",
         "JWT & RBAC",
         "Zod validation",
@@ -67,7 +66,6 @@ window.PORTFOLIO = {
         "Turborepo & npm workspaces",
         "AWS S3",
         "Nodemailer",
-        "Solidity & Hardhat",
       ],
     },
     {
@@ -169,14 +167,14 @@ window.PORTFOLIO = {
       live: "",
       code: "",
       type: "Internal operations",
-      scope: "Backend & infrastructure",
+      scope: "Full-stack development",
       caseStudy: {
         summary:
           "An internal admin tool for a team that needed different people to have different levels of access to the same data.",
         problem:
           "Admin tools tend to start open and get bolted shut later. This one had to be built with permissions as a first-class concern, including for the accounting data.",
         role:
-          "I built the access control model and the backend that enforces it, plus the supporting infrastructure for uploads and email.",
+          "I work across the frontend and backend, building admin dashboard interfaces, student-management workflows, payment and transaction integrations, accounting tools, and operational features.",
         built: [
           "Role-based access control seeded through provisioning scripts rather than clicked in by hand",
           "Session handling signed with jose, and request validation with Zod on the way in",
@@ -192,34 +190,34 @@ window.PORTFOLIO = {
       },
     },
     {
-      title: "ERC-20 token with a Hardhat test suite",
-      slug: "token",
+      title: "DHave Gadgetz payment QR",
+      slug: "dhave-gadgetz-qr",
       blurb:
-        "A Solidity token built with a full Hardhat toolchain, including TypeScript tests and type-safe contract bindings for the frontend.",
-      tags: ["Solidity", "Hardhat", "TypeScript", "Testing"],
-      live: "",
-      code: "",
-      type: "Web3 learning project",
-      scope: "Contract & test suite",
+        "A client payment utility where scanning a QR code opens a mobile-friendly page with verified bank details and a one-tap account-number copy action.",
+      tags: ["Node.js", "Express", "MongoDB", "QR Code"],
+      live: "https://dhave-gadgetz-qr.vercel.app",
+      code: "https://github.com/victory4110/dhave-gadgetz-qr",
+      type: "Client payment utility",
+      scope: "End-to-end engineering",
       caseStudy: {
         summary:
-          "A token contract taken all the way through the toolchain rather than stopped at the contract file.",
+          "I built this for a retail client to make bank-transfer details quick to access and easy to copy from a customer's phone.",
         problem:
-          "Contract code is deployed once and cannot be quietly patched, so the value is in the tests and the deployment path, not the contract itself.",
+          "Customers needed a reliable way to retrieve the correct account details during a transaction without the business repeatedly typing or sending them manually.",
         role:
-          "I wrote the contract, the test suite covering token behaviour, and the deployment setup.",
+          "I built the QR flow, backend API, account-data model, and responsive account-details page.",
         built: [
-          "ERC-20 contract with minting, transfer and allowance behaviour",
-          "TypeScript tests asserting the expected success and failure paths",
-          "Ignition deployment modules and a local node workflow",
-          "Generated type-safe bindings so the frontend cannot call a contract incorrectly",
+          "Permanent QR generation linked to the client's payment-information page",
+          "Express API for retrieving the correct account details",
+          "MongoDB account storage and update flow",
+          "Mobile-friendly profile page with a one-tap copy action",
         ],
         decisions: [
-          "Tested the failure cases as deliberately as the happy path, since the reverts are where tokens usually break.",
-          "Generated typed bindings instead of hand-writing calls, so a contract change fails at compile time.",
+          "Kept the QR destination stable so the printed code remains useful while the account information can be managed behind it.",
+          "Added a dedicated copy action to reduce typing mistakes during bank transfers.",
         ],
         honest:
-          "This is a learning project, not an audited contract. I would not deploy it with real value attached.",
+          "The current version focuses on making manual transfers easier; it does not independently confirm that a bank transfer has completed.",
       },
     },
     {
@@ -287,16 +285,10 @@ window.PORTFOLIO = {
   /* ── Timeline: keep it short and honest ───────────────── */
   timeline: [
     {
-      period: "2026 — now",
-      title: "Fullstack developer",
+      period: "Jan 2026 — present",
+      title: "Full-Stack Developer at Poolot",
       detail:
-        "Building TypeScript systems end to end: NestJS and MongoDB services on the backend, React and Next.js on the frontend.",
-    },
-    {
-      period: "Earlier",
-      title: "Digital marketing",
-      detail:
-        "Ran campaigns and content, which taught me how real users actually behave on a page.",
+        "Working across frontend and backend systems, including admin dashboards, student workflows, payments, accounting tools, and operational features.",
     },
   ],
 
@@ -304,12 +296,11 @@ window.PORTFOLIO = {
   contact: {
     heading: "Let's build something",
     blurb:
-      "I'm looking for a fullstack development role. If you want to talk about the systems and projects above, email is the fastest way to reach me.",
+      "I'm open to full-time roles, internships, freelance projects, and remote opportunities. If you want to discuss the systems and projects above, email is the fastest way to reach me.",
     email: "victoryogundipe4110@gmail.com",
     socials: [
       { label: "GitHub", href: "https://github.com/victory4110" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/ogundipe-victory-708875337" },
-      { label: "X / Twitter", href: "https://x.com/your-username" }, // still a placeholder, hidden until you set it
     ],
   },
 

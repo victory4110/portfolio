@@ -101,18 +101,16 @@ Any `link` or project URL that is empty, `"#"`, or still contains a placeholder
 (`your-username`, `example.com`, `tbd`, `todo`, `changeme`) is skipped rather than rendered. A
 button that goes nowhere is worse than no button.
 
-Live now: the hero shows **Email me**, **GitHub**, **LinkedIn** and **Résumé (PDF)**, and two
-of the five project cards carry real buttons (**meeting-qr**, **portfolio**). Everything
-below is real content, verified: each URL returns 200.
+Live now: the hero shows **Email me**, **GitHub**, and **LinkedIn**. The DHave Gadgetz,
+meeting QR, and portfolio project cards carry public links. Private collaboration projects
+do not show dead or inaccessible source buttons.
 
 Still hidden because the destination is not real:
 
 | Entry | What it needs |
 | --- | --- |
-| X / Twitter, in `contact.socials` | your real profile URL — still `x.com/your-username` |
 | ScholarOS `live` / `code` | a deployed URL and/or a public repo |
 | Poolot admin dashboard `live` / `code` | a deployed URL and/or a public repo (may never be public) |
-| ERC-20 token `live` / `code` | a public repo, if you want the Hardhat suite visible |
 
 Set any of those and the button appears on its own. Nothing else to change. A project with
 no real destination simply shows no buttons rather than a dead one.
